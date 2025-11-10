@@ -1,15 +1,10 @@
+from db_connect import connect_db   # använder din säkra anslutning
 import json
 import random
 
 # --- FUNKTION FÖR PSEUDONYMISERING ---
 def pseudonymize_data():
-    conn = psycopg2.connect(
-        host="eddapay-demo.c3oi0qmss74m.eu-north-1.rds.amazonaws.com",
-        dbname="postgres",
-        user="postgres",
-        password="Projekt2024!",
-        port="5432"
-    )
+    conn = connect_db()     # <-- använder funktionen från db_connect.py
     cur = conn.cursor()
 
     cur.execute('SELECT isbn, title FROM public."book_metadata" LIMIT 5;')
@@ -52,5 +47,3 @@ def translate_pseudonyms_back():
 # --- KÖR FUNKTIONERNA ---
 pseudonymize_data()
 translate_pseudonyms_back()
-
-
