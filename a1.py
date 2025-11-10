@@ -1,20 +1,5 @@
-import psycopg2
 import json
 import random
-
-# --- ANSLUTNINGSTEST ---
-try:
-    conn = psycopg2.connect(
-        host="eddapay-demo.c3oi0qmss74m.eu-north-1.rds.amazonaws.com",
-        dbname="postgres",
-        user="postgres",
-        password="Projekt2024!",
-        port="5432"
-    )
-    print("\n Anslutningen fungerar!")
-except Exception as e:
-    print("Något gick fel:", e)
-
 
 # --- FUNKTION FÖR PSEUDONYMISERING ---
 def pseudonymize_data():
