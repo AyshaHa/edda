@@ -23,7 +23,7 @@ def pseudonymize_data():
         with open("mapping.json", "w") as f:
             json.dump(mapping, f)
 
-        print("\n=== 📚 PSEUDONYMISERAD DATA ===")
+        print("\n===  PSEUDONYMISERAD DATA ===")
         for fake_isbn, fake_title in pseudonymized:
             print(f"  - {fake_isbn} | {fake_title}")
 
@@ -42,14 +42,14 @@ def translate_pseudonyms_back():
         with open("mapping.json", "r") as f:
             mapping = json.load(f)
 
-        print("\n=== 🔁 ÅTERÖVERSATT DATA ===")
+        print("\n===  ÅTERÖVERSATT DATA ===")
         for fake_isbn, real_data in mapping.items():
             print(f"  - {real_data['isbn']} | {real_data['title']}")
 
     except FileNotFoundError:
-        print("❌ Filen 'mapping.json' hittades inte. Kör pseudonymiseringen först!")
+        print(" Filen 'mapping.json' hittades inte. Kör pseudonymiseringen först!")
     except Exception as e:
-        print("❌ Ett fel uppstod när datan skulle översättas:", e)
+        print(" Ett fel uppstod när datan skulle översättas:", e)
 
 
 # --- KÖR FUNKTIONERNA ---
