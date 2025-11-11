@@ -28,7 +28,7 @@ def pseudonymize_data():
             print(f"  - {fake_isbn} | {fake_title}")
 
     except Exception as e:
-        print("❌ Ett fel uppstod under pseudonymisering:", e)
+        print(" Ett fel uppstod under pseudonymisering:", e)
 
     finally:
         if conn:
