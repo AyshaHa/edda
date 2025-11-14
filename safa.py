@@ -78,7 +78,7 @@ def plot_sales_over_time(sales_data):
     plt.show()
 
 
-# --- TESTA SAFAS FUNKTIONER ---
+# --- TESTA FUNKTIONER ---
 if __name__ == "__main__":
     fake_trend = "Försäljningen ökade med 25% mellan perioderna."
     fake_revenue = 500000

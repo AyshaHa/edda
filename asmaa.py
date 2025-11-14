@@ -74,9 +74,9 @@ def detect_sales_anomalies(isbn, window_size=7, threshold=2):
             medelvarde = sum(antal_fors) / len(antal_fors)
 
             if dagens_forsaljning > medelvarde * threshold:
-                print(f"📈 Spike {dagens_datum}: {dagens_forsaljning} vs {medelvarde:.2f}")
+                print(f" Spike {dagens_datum}: {dagens_forsaljning} vs {medelvarde:.2f}")
             elif dagens_forsaljning < medelvarde / threshold:
-                print(f"📉 Dip {dagens_datum}: {dagens_forsaljning} vs {medelvarde:.2f}")
+                print(f" Dip {dagens_datum}: {dagens_forsaljning} vs {medelvarde:.2f}")
 
     cur.close()
     conn.close()

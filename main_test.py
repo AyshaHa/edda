@@ -7,16 +7,16 @@ from samina import pseudonymize_data, translate_pseudonyms_back
 
 
 def main():
-    print("=== 📚 TEST AV HELA PROJEKTET ===")
+    print("=== TEST AV HELA PROJEKTET ===")
 
-    # 1️⃣ Databasanslutning
+    #  Databasanslutning
     conn = connect_db()
     if not conn:
-        print("❌ Kunde inte ansluta till databasen")
+        print("Kunde inte ansluta till databasen")
         return
-    print("✅ Ansluten till databasen\n")
+    print(" Ansluten till databasen\n")
 
-    # 2️⃣ Isra – Datahantering
+    # 2 Isra – Datahantering
     print("=== Isra – Datahantering ===")
     books = get_all_books()
     print("Antal böcker:", len(books))
@@ -28,13 +28,13 @@ def main():
     print("\nFörsäljningsdata (exempel):")
     print(get_sales_data("9780000000000")[:3])
 
-    # 3️⃣ Asmaa – Trend & tillväxt
+    #  Asmaa – Trend & tillväxt
     print("\n=== Asmaa – Trend & tillväxt ===")
     print(detect_trend("9780000000000", "2024-01-01", "2024-03-31", "2024-04-01", "2024-06-30"))
     detect_sales_anomalies("9780000000000")
     print(calculate_moving_average("9780000000000")[:5])
 
-    # 4️⃣ Aysha – Avvikelser & mönster
+    #  Aysha – Avvikelser & mönster
     print("\n=== Aysha – Avvikelser & mönster ===")
     print("Bästsäljare:")
     print(best_sellers(conn, limit=5))
@@ -42,14 +42,14 @@ def main():
     print(anomalies_by_day(conn, z_limit=2.0))
     print("\nTotal intäkt:", total_revenue(conn))
 
-    # 5️⃣ Weronika – AI-förberedelse
+    # Weronika – AI-förberedelse
     print("\n=== Weronika – Pseudonymisering ===")
     pseudonymize_data()
     translate_pseudonyms_back()
 
-    # 6️⃣ Avslut
+    #  Avslut
     conn.close()
-    print("\n✅ Allt klart!")
+    print("\n Allt klart!")
 
 
 if __name__ == "__main__":
